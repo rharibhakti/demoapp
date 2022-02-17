@@ -20,11 +20,10 @@ jobs:
       - run: 
           name: curl test
           command: |
-            curl -X POST "http://yoda.jira-dev.com/gateway/api/compass/v1/metrics"
+            curl -X POST "http://yoda.jira-dev.com/gateway/api/compass/v1/metrics" 
             --user "${COMPASS_USER_EMAIL}:${COMPASS_API_KEY}" 
             --header "Accept: application/json" 
             --header "Content-Type: application/json" 
-            --header "X-Forwarded-Proto: https"
             --data "{
               \"metricSourceId\": \"$ATLAS_ARI\",
               \"value\": 10,
