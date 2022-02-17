@@ -20,7 +20,7 @@ jobs:
       - run: 
           name: curl test verbose
           command: |
-            curl -v "https://yoda100.atlassian.net/gateway/api/compass/v1/metrics" 
+            echo 'curl -v "https://yoda100.atlassian.net/gateway/api/compass/v1/metrics" 
             --user "${COMPASS_USER_EMAIL}:${COMPASS_API_KEY}" 
             --header "Accept: application/json" 
             --header "Content-Type: application/json" 
@@ -28,7 +28,7 @@ jobs:
               \"metricSourceId\": \"$ATLAS_ARI\",
               \"value\": 10,
               \"timestamp\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"
-            }"
+            }"'
       
 
 # Invoke jobs via workflows
