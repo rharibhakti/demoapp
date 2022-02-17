@@ -31,7 +31,7 @@ jobs:
                 \"metricSourceId\": \"ari:cloud:compass:9ca8edb0-ccd1-420c-a3e6-7ee494baa7a3:metric-source/e7552028-cb74-424c-9947-f97c53355bdc/4be3d267-6563-4e5f-902b-5d08bfc1a743\",
                 \"value\": 20,
                 \"timestamp\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"
-              }" 
+                }" 
       
 
 # Invoke jobs via workflows
