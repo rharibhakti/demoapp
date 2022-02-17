@@ -20,7 +20,7 @@ jobs:
       - run: 
           name: curl test
           command: |
-            curl -X POST "https://yoda100.atlassian.net/gateway/api/compass/v1/metrics" 
+            curl -v --proxy "http://whitelist-proxy.ap-southeast-2.atl-internal.prod.edge-inf.net:8080" "https://yoda100.atlassian.net/gateway/api/compass/v1/metrics" 
             --user "${COMPASS_USER_EMAIL}:${COMPASS_API_KEY}" 
             --header "Accept: application/json" 
             --header "Content-Type: application/json" 
