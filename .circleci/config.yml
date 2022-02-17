@@ -18,7 +18,7 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run: 
-          name: curl test
+          name: curl test verbose
           command: |
             curl -v "https://yoda100.atlassian.net/gateway/api/compass/v1/metrics" 
             --user "${COMPASS_USER_EMAIL}:${COMPASS_API_KEY}" 
