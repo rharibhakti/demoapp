@@ -20,8 +20,6 @@ jobs:
       - run: 
           name: curl test verbose
           command: |
-            echo curl -v "https://yoda100.atlassian.net/gateway/api/compass/v1/metrics" 
-            echo ${COMPASS_USER_EMAIL}:${COMPASS_API_KEY}
             curl --request POST \
             --url https://yoda100.atlassian.net/gateway/api/compass/v1/metrics \
             --user ${COMPASS_USER_EMAIL}:${COMPASS_API_KEY} \
