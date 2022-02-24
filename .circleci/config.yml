@@ -24,7 +24,7 @@ jobs:
             --url ${COMPASS_WEBTRIGGER_URL} \
             --header "Accept: application/json" \
             --header "Content-Type: application/json" \
-            --data "{\"message\":\"circleci build no 2\"}"
+            --data "{\"message\":\"circleci build no 3\"}"
             
       
 # curl --request POST \
