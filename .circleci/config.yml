@@ -25,11 +25,11 @@ jobs:
             --header "Accept: application/json" \
             --header "Content-Type: application/json" \
             --data "{\"description\":\"circleci build event\",
-              \"buildNumber\": ${CIRCLE_BUILD_NUM},
-              \"status\":${WORKFLOW_STATUS},
-              \"workflowId\":${CIRCLE_WORKFLOW_ID},
-              \"repoUrl\":${repositoryUri},
-              \"repoName\":${CIRCLE_PROJECT_REPONAME}
+              \"buildNumber\": \"${CIRCLE_BUILD_NUM}\",
+              \"status\":\"${WORKFLOW_STATUS}\",
+              \"workflowId\":\"${CIRCLE_WORKFLOW_ID}\",
+              \"repoUrl\":\"${repositoryUri}\",
+              \"repoName\":\"${CIRCLE_PROJECT_REPONAME}\"
               }"
             
       
