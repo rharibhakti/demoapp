@@ -26,7 +26,7 @@ jobs:
             --header "Content-Type: application/json" \
             --data "{\"description\":\"${CIRCLE_PROJECT_REPONAME} #${CIRCLE_BUILD_NUM} ${CIRCLE_JOB}\",
               \"buildNumber\": \"${CIRCLE_BUILD_NUM}\",
-              \"status\":\"${WORKFLOW_STATUS}\",
+              \"status\":\"IN_PROGRESS\",
               \"workflowId\":\"${CIRCLE_WORKFLOW_ID}\",
               \"workspaceId\":\"${CIRCLE_WORKFLOW_WORKSPACE_ID}\",
               \"repoUrl\":\"${CIRCLE_REPOSITORY_URL}\",
