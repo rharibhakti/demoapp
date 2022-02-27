@@ -24,7 +24,7 @@ jobs:
             --url ${COMPASS_WEBTRIGGER_URL} \
             --header "Accept: application/json" \
             --header "Content-Type: application/json" \
-            --data "{\"description\":\"circleci build event\",
+            --data "{\"description\":\"${CIRCLE_PROJECT_REPONAME} #${CIRCLE_BUILD_NUM} ${CIRCLE_JOB}\",
               \"buildNumber\": \"${CIRCLE_BUILD_NUM}\",
               \"status\":\"${WORKFLOW_STATUS}\",
               \"workflowId\":\"${CIRCLE_WORKFLOW_ID}\",
