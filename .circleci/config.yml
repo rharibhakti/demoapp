@@ -31,7 +31,9 @@ jobs:
               \"workspaceId\":\"${CIRCLE_WORKFLOW_WORKSPACE_ID}\",
               \"repoUrl\":\"${CIRCLE_REPOSITORY_URL}\",
               \"repoName\":\"${CIRCLE_PROJECT_REPONAME}\",
-              \"externalSourceId\":\"${EXTERNAL_SOURCE_ID}\"
+              \"externalSourceId\":\"${EXTERNAL_SOURCE_ID}\",
+              \"pipeline-url\":\"https://app.circleci.com/pipelines/github/rharibhakti/demoapp\"
+              \"url\":\"https://app.circleci.com\"
               }"
             echo "successful curl to webtrigger"
             
