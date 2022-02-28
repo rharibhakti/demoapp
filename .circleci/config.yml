@@ -30,7 +30,8 @@ jobs:
               \"workflowId\":\"${CIRCLE_WORKFLOW_ID}\",
               \"workspaceId\":\"${CIRCLE_WORKFLOW_WORKSPACE_ID}\",
               \"repoUrl\":\"${CIRCLE_REPOSITORY_URL}\",
-              \"repoName\":\"${CIRCLE_PROJECT_REPONAME}\"
+              \"repoName\":\"${CIRCLE_PROJECT_REPONAME}\",
+              \"externalSourceId\":\"${EXTERNAL_SOURCE_ID}\"
               }"
             echo "successful curl to webtrigger"
             
