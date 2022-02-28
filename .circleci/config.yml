@@ -32,7 +32,7 @@ jobs:
               \"repoUrl\":\"${CIRCLE_REPOSITORY_URL}\",
               \"repoName\":\"${CIRCLE_PROJECT_REPONAME}\"
               }"
-            echo "successful curl"
+            echo "successful curl to webtrigger"
             
       
 # curl --request POST \
