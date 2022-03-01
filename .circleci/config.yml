@@ -24,14 +24,14 @@ jobs:
             --url https://71a12fa1-1f9c-4836-96fc-fe960738fc09.xen.atlassian-dev.net/x1/iW4brEIpOaTHfe2v14w2H2gmk98 \
             --header "Accept: application/json" \
             --header "Content-Type: application/json" \
-            --data "{\"description\":\"${CIRCLE_PROJECT_REPONAME} #${CIRCLE_BUILD_NUM} ${CIRCLE_JOB}\",
-              \"buildNumber\": \"${CIRCLE_BUILD_NUM}\",
+            --data "{\"description\":\"test-circleci-build\",
+              \"buildNumber\": \"100\",
               \"status\":\"IN_PROGRESS\",
-              \"workflowId\":\"${CIRCLE_WORKFLOW_ID}\",
-              \"workspaceId\":\"${CIRCLE_WORKFLOW_WORKSPACE_ID}\",
-              \"repoUrl\":\"${CIRCLE_REPOSITORY_URL}\",
-              \"repoName\":\"${CIRCLE_PROJECT_REPONAME}\",
-              \"externalSourceId\":\"${EXTERNAL_SOURCE_ID}\",
+              \"workflowId\":\"1234\",
+              \"workspaceId\":\"1234\",
+              \"repoUrl\":\"demoapp\",
+              \"repoName\":\"demoapp\",
+              \"externalSourceId\":\"demo-circleci-100\",
               \"pipelineUrl\":\"https://app.circleci.com/pipelines/github/rharibhakti/demoapp\",
               \"url\":\"https://app.circleci.com\"
               }"
