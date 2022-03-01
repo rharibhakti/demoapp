@@ -21,7 +21,7 @@ jobs:
           name: curl test verbose
           command: |
             curl --request POST \
-            --url ${COMPASS_WEBTRIGGER_URL} \
+            --url ${EXAMPLE_WEBTRIGGER_URL} \
             --header "Accept: application/json" \
             --header "Content-Type: application/json" \
             --data "{\"description\":\"${CIRCLE_PROJECT_REPONAME} #${CIRCLE_BUILD_NUM} ${CIRCLE_JOB}\",
