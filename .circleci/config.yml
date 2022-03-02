@@ -25,7 +25,7 @@ jobs:
             --header "Accept: application/json" \
             --header "Content-Type: application/json" \
             --data "{\"description\":\"test-circleci-build\",
-              \"buildNumber\": \"100\",
+              \"buildNumber\": \"101\",
               \"status\":\"IN_PROGRESS\",
               \"workflowId\":\"1234\",
               \"workspaceId\":\"1234\",
