@@ -31,7 +31,7 @@ jobs:
               \"workspaceId\":\"1234\",
               \"repoUrl\":\"demoapp\",
               \"repoName\":\"demoapp\",
-              \"externalSourceId\":\"demo-circleci-100\",
+              \"externalSourceId\":\"a3b5ea4d-18c0-4daa-99b1-cf69cf46ffc8\",
               \"pipelineUrl\":\"https://app.circleci.com/pipelines/github/rharibhakti/demoapp\",
               \"url\":\"https://app.circleci.com\"
               }"
