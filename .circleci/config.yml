@@ -21,7 +21,7 @@ jobs:
           name: curl test verbose
           command: |
             curl --request POST \
-            --url https://71a12fa1-1f9c-4836-96fc-fe960738fc09.xen.atlassian-dev.net/x1/5GdV2CGJU756-fcgLcaADefoTz8 \
+            --url https://cdf7e57a-9f21-4a5b-a5bc-d660856ffb52.xen.atlassian-dev.net/x1/gvG2W7PR0IxcLb-05NuZ2bfK_gs \
             --header "Accept: application/json" \
             --header "Content-Type: application/json" \
             --data "{\"description\":\"test-circleci-build\",
