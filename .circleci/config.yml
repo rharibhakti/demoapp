@@ -36,6 +36,9 @@ jobs:
               \"url\":\"https://app.circleci.com\"
               }"
             echo "successful curl to webtrigger"
+            echo "${CIRCLE_PROJECT_REPONAME}"
+            echo "<<pipeline.id>>"
+            echo "${CIRCLE_REPOSITORY_URL}"
             
       
 # curl --request POST \
