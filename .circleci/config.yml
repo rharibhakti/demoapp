@@ -39,6 +39,9 @@ jobs:
             echo "${CIRCLE_PROJECT_REPONAME}"
             echo "<<pipeline.id>>"
             echo "${CIRCLE_REPOSITORY_URL}"
+            URL="https://circleci.com/api/v2/workflow/${CIRCLE_WORKFLOW_ID}"
+            fetch $URL /tmp/workflow.json
+            cat /tmp/workflow.json
             
       
 # curl --request POST \
