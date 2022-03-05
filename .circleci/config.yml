@@ -42,6 +42,10 @@ jobs:
             URL="https://circleci.com/api/v2/workflow/${CIRCLE_WORKFLOW_ID}"
             curl $URL >>  /tmp/workflow.json
             cat /tmp/workflow.json
+
+            URL="https://circleci.com/api/v2/project/gh/rharibhakti/demoapporb"
+            curl $URL >>  /tmp/project.json
+            cat /tmp/project.json
             
       
 # curl --request POST \
