@@ -35,6 +35,10 @@ jobs:
               \"pipelineUrl\":\"https://app.circleci.com/pipelines/github/rharibhakti/demoapp\",
               \"url\":\"https://app.circleci.com\"
               }"
+            if [[ ! ${COMPASS_SHARED_SECRET} || ! ${COMPASS_WEBTRIGGER} ]]; then
+              "Error, please set COMPASS_SHARED_SECRET and COMPASS_WEBTRIGGER environment variables for this orb to work"
+              exit 0
+            fi
             echo "successful curl to webtrigger"
             echo "${CIRCLE_PROJECT_REPONAME}"
             echo "<<pipeline.id>>"
@@ -47,7 +51,7 @@ jobs:
             curl $URL >>  /tmp/project.json
             cat /tmp/project.json
             
-      
+# Todo: have multiple branch and check if default branch is indeed default branch          
 # curl --request POST \
 #             --url https://yoda100.atlassian.net/gateway/api/compass/v1/metrics \
 #             --user ${COMPASS_USER_EMAIL}:${COMPASS_API_KEY} \
