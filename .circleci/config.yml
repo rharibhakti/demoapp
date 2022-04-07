@@ -75,6 +75,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - test-job:
-        context: compass-integration
-        post-steps:
-          - compass/notify
+         context: compass-integration
+         post-steps:
+           - compass/notify
