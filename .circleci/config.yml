@@ -7,7 +7,6 @@ orbs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   test-job:
-    context: compass-integration
     docker:
       - image: 'circleci/node:10'
     steps:
@@ -76,4 +75,5 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - test-job
+      - test-job:
+        context: compass-integration
