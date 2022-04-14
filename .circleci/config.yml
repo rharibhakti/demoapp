@@ -88,10 +88,14 @@ workflows:
          post-steps:
            - compass/notify
       - test:
+         requires:
+          - build
          context: compass-integration
          post-steps:
            - compass/notify      
       - deploy:
+         requires:
+           - test
          context: compass-integration
          post-steps:
            - compass/notify 
@@ -102,6 +106,8 @@ workflows:
          post-steps:
            - compass/notify
       - deploy:
+         requires:
+           - build
          context: compass-integration
          post-steps:
            - compass/notify 
