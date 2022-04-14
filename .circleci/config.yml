@@ -81,7 +81,7 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  build-test-deploy-workflow:
     jobs:
       - build:
          context: compass-integration
@@ -91,6 +91,16 @@ workflows:
          context: compass-integration
          post-steps:
            - compass/notify      
+      - deploy:
+         context: compass-integration
+         post-steps:
+           - compass/notify 
+  build-deploy-workflow:
+    jobs:
+      - build:
+         context: compass-integration
+         post-steps:
+           - compass/notify
       - deploy:
          context: compass-integration
          post-steps:
