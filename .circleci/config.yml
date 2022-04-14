@@ -6,12 +6,21 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  test-job:
+  test:
     docker:
       - image: 'circleci/node:10'
     steps:
-      - run: echo "hello"
-    
+      - run: echo "test"
+  build:
+    docker:
+      - image: 'circleci/node:10'
+    steps:
+      - run: echo "build"
+  deploy:
+    docker:
+      - image: 'circleci/node:10'
+    steps:
+      - run: echo "deployment" 
   # say-hello:
   #   # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
   #   # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
@@ -74,7 +83,15 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - test-job:
+      - build:
          context: compass-integration
          post-steps:
            - compass/notify
+      - test:
+         context: compass-integration
+         post-steps:
+           - compass/notify      
+      - deploy:
+         context: compass-integration
+         post-steps:
+           - compass/notify 
