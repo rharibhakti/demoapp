@@ -90,9 +90,6 @@ workflows:
       - test:
          requires:
           - build
-         context: compass-integration
-         post-steps:
-           - compass/notify      
       - deploy:
          requires:
            - test
