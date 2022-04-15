@@ -21,6 +21,12 @@ jobs:
       - image: 'circleci/node:10'
     steps:
       - run: echo "deployment" 
+  notify:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: compass/notify
+  
   # say-hello:
   #   # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
   #   # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
@@ -108,3 +114,12 @@ workflows:
          context: compass-integration
          post-steps:
            - compass/notify 
+  test-workflow:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+      - notify:
+         requires:
+           - deploy
