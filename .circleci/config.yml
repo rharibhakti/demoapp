@@ -113,15 +113,4 @@ workflows:
            - build
          context: compass-integration
          post-steps:
-           - compass/notify 
-  test-workflow:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-      - notify:
-         requires:
-           - deploy
-         post-steps:
-            - compass/notify
+           - compass/notify
