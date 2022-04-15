@@ -25,7 +25,7 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - compass/notify
+      - run: echo "notify"
   
   # say-hello:
   #   # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
@@ -123,3 +123,5 @@ workflows:
       - notify:
          requires:
            - deploy
+         post-steps:
+            - compass/notify
