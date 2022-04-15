@@ -25,7 +25,7 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - run: compass/notify
+      - compass/notify
   
   # say-hello:
   #   # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
