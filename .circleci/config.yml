@@ -114,3 +114,16 @@ workflows:
          context: compass-integration
          post-steps:
            - compass/notify
+  build-workflow:
+    jobs:
+      - build
+      - notify:
+         post-steps:
+            - compass/notify
+  deploy-workflow:
+    jobs:
+      - deploy
+      - notify:
+         post-steps:
+            - compass/notify
+         job_type: 'deploy'
