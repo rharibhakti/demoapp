@@ -117,13 +117,9 @@ workflows:
   build-workflow:
     jobs:
       - build
+      - deploy:
+         requires:
+           - build
       - notify:
          post-steps:
             - compass/notify
-  deploy-workflow:
-    jobs:
-      - deploy
-      - notify:
-         post-steps:
-            - compass/notify
-         job_type: 'deploy'
