@@ -93,33 +93,33 @@ workflows:
          context: compass-integration
          post-steps:
            - compass/notify
-  # build-test-deploy-workflow:
-  #   jobs:
-  #     - build:
-  #        context: compass-integration
-  #        post-steps:
-  #          - compass/notify
-  #     - test:
-  #        requires:
-  #         - build
-  #     - deploy:
-  #        requires:
-  #          - test
-  #        context: compass-integration
-  #        post-steps:
-  #          - compass/notify 
-  # build-deploy-workflow:
-  #   jobs:
-  #     - build:
-  #        context: compass-integration
-  #        post-steps:
-  #          - compass/notify
-  #     - deploy:
-  #        requires:
-  #          - build
-  #        context: compass-integration
-  #        post-steps:
-  #          - compass/notify
+  build-test-deploy-workflow:
+    jobs:
+      - build:
+         context: compass-integration
+         post-steps:
+           - compass/notify
+      - test:
+         requires:
+          - build
+      - deploy:
+         requires:
+           - test
+         context: compass-integration
+         post-steps:
+           - compass/notify 
+  build-deploy-workflow:
+    jobs:
+      - build:
+         context: compass-integration
+         post-steps:
+           - compass/notify
+      - deploy:
+         requires:
+           - build
+         context: compass-integration
+         post-steps:
+           - compass/notify
   # test-workflow:
   #   jobs:
   #     - build
