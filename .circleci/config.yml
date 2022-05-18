@@ -38,19 +38,16 @@ workflows:
            - test
          context: compass-integration
          post-steps:
-           - compass/notify 
+           - compass/notify_deployment
   build-deploy-workflow:
     jobs:
-      - build:
-         context: compass-integration
-         post-steps:
-           - compass/notify
+      - build
       - deploy:
          requires:
            - build
          context: compass-integration
          post-steps:
-           - compass/notify
+           - compass/notify_deployment
   test-workflow:
     jobs:
       - build
@@ -60,5 +57,4 @@ workflows:
       - notify:
          requires:
            - build
-         post-steps:
-            - compass/notify
+           
