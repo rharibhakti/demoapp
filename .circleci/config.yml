@@ -26,73 +26,7 @@ jobs:
       - image: 'circleci/node:10'
     steps:
       - run: echo "notify"
-  
-  # say-hello:
-  #   # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-  #   # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-  #   docker:
-  #     - image: cimg/base:stable
-  #   # Add steps to the job
-  #   # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-  #   steps:
-  #     - checkout
-  #     - run:
-  #         name: "Say hello"
-  #         command: "echo Hello, World!"
-  #     - run: 
-  #         name: curl test verbose
-  #         command: |
-  #           curl --request POST \
-  #           --url https://cdf7e57a-9f21-4a5b-a5bc-d660856ffb52.xen.atlassian-dev.net/x1/gvG2W7PR0IxcLb-05NuZ2bfK_gs \
-  #           --header "Accept: application/json" \
-  #           --header "Content-Type: application/json" \
-  #           --data "{\"description\":\"test-circleci-build\",
-  #             \"buildNumber\": \"101\",
-  #             \"status\":\"IN_PROGRESS\",
-  #             \"workflowId\":\"1234\",
-  #             \"workspaceId\":\"1234\",
-  #             \"repoUrl\":\"demoapp\",
-  #             \"repoName\":\"demoapp\",
-  #             \"externalSourceId\":\"circleci/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_REPOSITORY_URL}/<<pipeline.id>>\",
-  #             \"pipelineUrl\":\"https://app.circleci.com/pipelines/github/rharibhakti/demoapp\",
-  #             \"url\":\"https://app.circleci.com\"
-  #             }"
-  #           if [[ ! ${COMPASS_SHARED_SECRET} || ! ${COMPASS_WEBTRIGGER} ]]; then
-  #             "Error, please set COMPASS_SHARED_SECRET and COMPASS_WEBTRIGGER environment variables for this orb to work"
-  #             exit 0
-  #           fi
-  #           echo "successful curl to webtrigger"
-  #           echo "${CIRCLE_PROJECT_REPONAME}"
-  #           echo "<<pipeline.id>>"
-  #           echo "${CIRCLE_REPOSITORY_URL}"
-  #           URL="https://circleci.com/api/v2/workflow/${CIRCLE_WORKFLOW_ID}"
-  #           curl $URL >>  /tmp/workflow.json
-  #           cat /tmp/workflow.json
-
-  #           URL="https://circleci.com/api/v2/project/gh/rharibhakti/demoapporb"
-  #           curl $URL >>  /tmp/project.json
-  #           cat /tmp/project.json
-            
-# Todo: have multiple branch and check if default branch is indeed default branch          
-# curl --request POST \
-#             --url https://yoda100.atlassian.net/gateway/api/compass/v1/metrics \
-#             --user ${COMPASS_USER_EMAIL}:${COMPASS_API_KEY} \
-#             --header "Accept: application/json" \
-#             --header "Content-Type: application/json" \
-#             --data "{\"metricSourceId\": \"ari:cloud:compass:9ca8edb0-ccd1-420c-a3e6-7ee494baa7a3:metric-source/e7552028-cb74-424c-9947-f97c53355bdc/4be3d267-6563-4e5f-902b-5d08bfc1a743\",
-#               \"value\": 100,
-#               \"timestamp\": 
-#               \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"
-#               }" 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  # build-workflow:
-  #   jobs:
-  #     - build:
-  #        context: compass-integration
-  #        post-steps:
-  #          - compass/notify
   build-test-deploy-workflow:
     jobs:
       - build
@@ -117,14 +51,14 @@ workflows:
          context: compass-integration
          post-steps:
            - compass/notify
-  # test-workflow:
-  #   jobs:
-  #     - build
-  #     - deploy:
-  #        requires:
-  #          - build
-  #     - notify:
-  #        requires:
-  #          - build
-  #        post-steps:
-  #           - compass/notify
+  test-workflow:
+    jobs:
+      - build
+      - deploy:
+         requires:
+           - build
+      - notify:
+         requires:
+           - build
+         post-steps:
+            - compass/notify
