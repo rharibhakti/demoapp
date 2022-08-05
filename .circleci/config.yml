@@ -45,7 +45,7 @@ workflows:
       - deploy:
          requires:
            - build
-         context: compass-integration-yoda100
+         context: compass-integration-yoda
          post-steps:
            - compass/notify_deployment
   test-workflow:
