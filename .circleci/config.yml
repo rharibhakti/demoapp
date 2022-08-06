@@ -11,6 +11,7 @@ jobs:
       - image: 'circleci/node:10'
     steps:
       - run: echo "test"
+      - run: exit 4
   build:
     docker:
       - image: 'circleci/node:10'
